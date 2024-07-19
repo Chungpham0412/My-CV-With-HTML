@@ -1,0 +1,6 @@
+Say H!!!
+Thay doi file html xong luu
+
+#Export html to pdf sẽ thấy thư mục output
+Run command: node convert_html_to_pdf/index.js
+
