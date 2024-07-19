@@ -1,0 +1,26 @@
+//reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+.my-cv {
+}
+.my-cv__wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.my-cv__contact {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.text-center {
+  text-align: center;
+}
