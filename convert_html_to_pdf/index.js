@@ -36,7 +36,17 @@ function getUniqueFilePath(filePath) {
   pdfFilePath = getUniqueFilePath(pdfFilePath);
 
   // Save the PDF
-  await page.pdf({ path: pdfFilePath, format: "A4" });
+  // await page.pdf({ path: pdfFilePath, format: "A4" });
+  await page.pdf({
+    path: pdfFilePath,
+    format: "A4",
+    margin: {
+      top: "0.5in",
+      bottom: "0.5in",
+      left: "0.75in",
+      right: "0.75in",
+    },
+  });
 
   await browser.close();
 })();
