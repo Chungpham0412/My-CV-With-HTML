@@ -4,11 +4,19 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 body {
   padding: 0;
   margin: 0;
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  /* font-family: "Roboto", sans-serif; */
+  font-family: "Merriweather", sans-serif;
+  font-size: 14px;
   line-height: 1.5;
   color: #333;
 }
@@ -23,6 +31,48 @@ body {
   justify-content: center;
   gap: 30px;
 }
-.text-center {
+.my-cv__contact li {
+}
+.my-cv__contact li a,
+.my-cv__awards li a {
+  color: #333;
+}
+.my-cv__box {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #000;
+}
+.my-cv-box__title {
   text-align: center;
+  font-size: 2rem;
+}
+.my-cv-box__name {
+  font-size: 1.8rem;
+  margin: 0;
+}
+.my-cv__box__list {
+  column-gap: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+.column-2 {
+  column-count: 2;
+}
+.column-3 {
+  column-count: 3;
+}
+.my-cv__box__list.column-2 li:nth-child(even) {
+  text-align: right;
+}
+.my-cv__box__list.column-2 li:nth-child(odd) {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center !important;
+}
+.text-left {
+  text-align: left !important;
 }
