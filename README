@@ -4,3 +4,5 @@ Thay doi file html xong luu
 #Export html to pdf sẽ thấy thư mục output
 Run command: node convert_html_to_pdf/index.js
 
+Nếu đường dẫn file html khác thì truyền vào tham số thứ 2
+Run command: node convert_html_to_pdf/index.js path/to/file.html
