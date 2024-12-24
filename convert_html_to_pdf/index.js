@@ -20,15 +20,18 @@ function getUniqueFilePath(filePath) {
   const page = await browser.newPage();
 
   // Path to the HTML file
-  // const htmlFilePath = "file:////Users/huemin/Documents/CV/html/index.html"; // Update this with the correct path
+  // const htmlFilePath = "file:////Users/huemin/Documents/My Project/Portfolio/My-CV-With-HTML/index.html"; // Update this with the correct path
   // get ten file tu command line
   const htmlFileName = process.argv[2];
   console.log("htmlFileName", htmlFileName);
-  let htmlFilePath = "file:////Users/huemin/Documents/CV/html/index.html";
+  let htmlFilePath =
+    "file:////Users/huemin/Documents/My Project/Portfolio/My-CV-With-HTML/index.html";
   if (htmlFileName !== undefined) {
-    htmlFilePath = "file:////Users/huemin/Documents/CV/html/" + htmlFileName;
+    htmlFilePath =
+      "file:////Users/huemin/Documents/My Project/Portfolio/My-CV-With-HTML/" +
+      htmlFileName;
   }
-  // const htmlFilePath = "file:////Users/huemin/Documents/CV/html/index-reactjs.html"; // Update this with the correct path
+  // const htmlFilePath = "file:////Users/huemin/Documents/My Project/Portfolio/My-CV-With-HTML/index-reactjs.html"; // Update this with the correct path
   await page.goto(htmlFilePath, { waitUntil: "networkidle2" });
 
   // Directory and file paths
