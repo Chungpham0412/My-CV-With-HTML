@@ -24,19 +24,26 @@ function getUniqueFilePath(filePath) {
   // get ten file tu command line
   const htmlFileName = process.argv[2];
   console.log("htmlFileName", htmlFileName);
-  let htmlFilePath =
-    "file:////Users/huemin/Documents/My Project/Portfolio/My-CV-With-HTML/index.html";
+  let htmlFilePath = "file:///D:/Chungpq/My-CV-With-HTML/laravel.html";
   if (htmlFileName !== undefined) {
-    htmlFilePath =
-      "file:////Users/huemin/Documents/My Project/Portfolio/My-CV-With-HTML/" +
-      htmlFileName;
+    htmlFilePath = "file:///D:/Chungpq/My-CV-With-HTML/" + htmlFileName;
   }
-  // const htmlFilePath = "file:////Users/huemin/Documents/My Project/Portfolio/My-CV-With-HTML/index-reactjs.html"; // Update this with the correct path
-  await page.goto(htmlFilePath, { waitUntil: "networkidle2" });
 
+  // const htmlFilePath = "file:////Users/huemin/Documents/My Project/Portfolio/My-CV-With-HTML/index-reactjs.html"; // Update this with the correct path
+  // await page.goto(htmlFilePath, { waitUntil: "networkidle2", timeout: 600000 });
+  try {
+    await page.goto(htmlFilePath, {
+      waitUntil: "networkidle2",
+      timeout: 120000,
+    });
+  } catch (error) {
+    console.error("Lỗi khi tải tệp HTML:", error);
+    await browser.close();
+    process.exit(1);
+  }
   // Directory and file paths
   const outputDir = path.resolve(__dirname, "../export");
-  let pdfFilePath = path.join(outputDir, "ChungPQ-SoftwareEngineer.pdf");
+  let pdfFilePath = path.join(outputDir, "ChungPQ-PHP-Developer.pdf");
 
   // Create the output directory if it doesn't exist
   if (!fs.existsSync(outputDir)) {
