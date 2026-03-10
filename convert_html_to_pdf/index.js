@@ -22,12 +22,14 @@ function getUniqueFilePath(filePath) {
   // Path to the HTML file
   // const htmlFilePath = "file:////Users/huemin/Documents/My Project/Portfolio/My-CV-With-HTML/index.html"; // Update this with the correct path
   // get ten file tu command line
-  const htmlFileName = process.argv[2];
+  const htmlFileName = process.argv[2] || "index.html";
   console.log("htmlFileName", htmlFileName);
-  let htmlFilePath = "file:///D:/Chungpq/My-CV-With-HTML/laravel.html";
-  if (htmlFileName !== undefined) {
-    htmlFilePath = "file:///D:/Chungpq/My-CV-With-HTML/" + htmlFileName;
-  }
+  
+  // Use relative path from script location to parent directory
+  const baseDir = path.resolve(__dirname, "..");
+  const htmlFilePath = `file://${path.join(baseDir, htmlFileName)}`;
+  
+  console.log("htmlFilePath", htmlFilePath);
 
   // const htmlFilePath = "file:////Users/huemin/Documents/My Project/Portfolio/My-CV-With-HTML/index-reactjs.html"; // Update this with the correct path
   // await page.goto(htmlFilePath, { waitUntil: "networkidle2", timeout: 600000 });
@@ -43,7 +45,7 @@ function getUniqueFilePath(filePath) {
   }
   // Directory and file paths
   const outputDir = path.resolve(__dirname, "../export");
-  let pdfFilePath = path.join(outputDir, "ChungPQ-PHP-Developer.pdf");
+  let pdfFilePath = path.join(outputDir, "ChungPQ-SoftwareEngineer.pdf");
 
   // Create the output directory if it doesn't exist
   if (!fs.existsSync(outputDir)) {
